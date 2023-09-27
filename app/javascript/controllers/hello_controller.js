@@ -1,7 +1,13 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
+  static targets = ["button"];
   connect() {
-    this.element.textContent = "Hello World!"
+    console.log("Hello, Stimulus!");
+    console.log("button", this.buttonTarget);
+  }
+
+  greet() {
+    alert("Hello, Stimulus!");
   }
 }
