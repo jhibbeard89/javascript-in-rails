@@ -1,5 +1,5 @@
 class MonumentsController < ApplicationController
-  before_action :set_monument, only: %i[ show edit update destroy ]
+  before_action :set_monument, only: %i[show edit update destroy]
 
   # GET /monuments
   def index
@@ -46,13 +46,14 @@ class MonumentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_monument
-      @monument = Monument.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def monument_params
-      params.require(:monument).permit(:name, :address, :opening_date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_monument
+    @monument = Monument.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def monument_params
+    params.require(:monument).permit(:name, :address, :opening_date)
+  end
 end
